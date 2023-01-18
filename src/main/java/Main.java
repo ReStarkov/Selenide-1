@@ -23,7 +23,7 @@ public class Main {
         russianTv.deleteValueFromList("ТНТ", channels);
         russianTv.addValueToList("МатчТВ", channels, Country.RU);
         russianTv.searchValueInList("СТС", channels);
-        
+
 
         //map
         mapChannels = unitedStatesTv.createMapChannels();
