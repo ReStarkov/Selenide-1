@@ -23,21 +23,20 @@ public class Main {
         russianTv.deleteValueFromList("ТНТ", channels);
         russianTv.addValueToList("МатчТВ", channels, Country.RU);
         russianTv.searchValueInList("СТС", channels);
-        System.out.println(channels);
+        
 
         //map
         mapChannels = unitedStatesTv.createMapChannels();
         unitedStatesTv.searchValueInMap("FOX", mapChannels);
         unitedStatesTv.addValueToMap("FOX NEWS", mapChannels, Country.USA);
         unitedStatesTv.deleteValueFromMap("DallasTv", mapChannels);
-        System.out.println(mapChannels);
+
 
         //множества
         category = franceTv.createCategoryChannels();
         franceTv.addValueToSet("cartoons", category, Country.FR);
         franceTv.searchValueInSet("cartoons", category);
-        System.out.println(category);
         franceTv.deleteValueFromSet("cartoons", category);
-        System.out.println(category);
+
     }
 }
