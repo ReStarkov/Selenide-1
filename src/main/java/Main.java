@@ -1,57 +1,43 @@
+import data.Country;
+import data.FranceChannels;
+import data.RussianChannels;
+import data.UnitedStatesChannels;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+
 public class Main {
     public static void main(String[] args) {
-        // примитивные типы
-        byte varByte = 127;     // from -128 to 127
-        short varShort = 32766; // from  -32 768 to 32767
-        int varInt = 2147483647; // 2^31 ... 2^31-1
-        long varLong = 2147483648L; // -2^63 ... 2^63-1
-        float varFloat = 15.11111f;
-        double varDouble = 15.1;
-        boolean varBoolean = true; // or false
-        char varChar='x';
 
-        // операции с притивными типами данных
-        System.out.println(varByte - 1);
-        System.out.println(varShort + 1);
-        System.out.println(varInt / 2);
-        System.out.println(varLong * 2);
-        System.out.println(varFloat % 2);
-        System.out.println(varDouble % 2);
+        ArrayList<String> channels;
+        HashMap<Integer, String> mapChannels;
+        HashSet<String> category;
 
-        // переполнение
-        System.out.println(varInt + 1);
+        RussianChannels russianTv = new RussianChannels();
+        UnitedStatesChannels unitedStatesTv = new UnitedStatesChannels();
+        FranceChannels franceTv = new FranceChannels();
 
-        // сравнение
-        System.out.println(varByte == 127); //true
-        System.out.println(varByte != 126); // true
-        System.out.println(varByte >= 126); // true
-        System.out.println(varByte <= 126); // false
-        System.out.println(varByte < 126); // false
-        System.out.println(varByte > 126); // true
+        //списки
+        channels = russianTv.createListChannels();
+        russianTv.deleteValueFromList("ТНТ", channels);
+        russianTv.addValueToList("МатчТВ", channels, Country.RU);
+        russianTv.searchValueInList("СТС", channels);
+        System.out.println(channels);
 
-        // Логические операторы
-        //&& и
-        if (varByte == 127 && varShort == 32766) {
-            System.out.println("правда"); // правда
-        }
-        else {
-            System.out.println("ложь");
-        }
+        //map
+        mapChannels = unitedStatesTv.createMapChannels();
+        unitedStatesTv.searchValueInMap("FOX", mapChannels);
+        unitedStatesTv.addValueToMap("FOX NEWS", mapChannels, Country.USA);
+        unitedStatesTv.deleteValueFromMap("DallasTv", mapChannels);
+        System.out.println(mapChannels);
 
-        // || или
-        if (varByte == 127 || varBoolean == true) {
-            System.out.println("правда"); // правда
-        }
-        else {
-            System.out.println("ложь");
-        }
-
-        // ! не
-        if (!(varByte == 127)) {
-            System.out.println("правда");
-        }
-        else {
-            System.out.println("ложь"); //ложь
-        }
+        //множества
+        category = franceTv.createCategoryChannels();
+        franceTv.addValueToSet("cartoons", category, Country.FR);
+        franceTv.searchValueInSet("cartoons", category);
+        System.out.println(category);
+        franceTv.deleteValueFromSet("cartoons", category);
+        System.out.println(category);
     }
 }
