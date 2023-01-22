@@ -1,4 +1,4 @@
-package tests;
+package hh.tests;
 
 import com.codeborne.selenide.Configuration;
 import hh.pages.MainPage;
