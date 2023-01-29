@@ -11,13 +11,13 @@ import java.util.stream.Stream;
 
 public class SearchByMethodSourceTest extends BaseTest{
 
-    static Stream<Arguments> DataProvider() {
+    static Stream<Arguments> dataProvider() {
         return Stream.of(
                 Arguments.of("DEV", List.of("Dev", "Devops","Developer", "Development", "Devexperts", "Develogroup","Devim", "Develop", "Devops junior", "Devexpress")),
                 Arguments.of("QA", List.of("Qa", "Qa engineer", "Qa tester", "Qatar", "Qa automation", "Qazaq", "Qa junior", "Qa lead", "Qa тестировщик", "Qa/qc"))
         );
     }
-    @MethodSource("DataProvider")
+    @MethodSource("dataProvider")
     @ParameterizedTest(name = "Для введенного значения: {0} в результате выдаче содержится вариант {1}")
     @Tags({@Tag("BLOCKER"), @Tag("UI_TEST")})
     void inputItemsShouldHaveValue(String value, List<String> items){
