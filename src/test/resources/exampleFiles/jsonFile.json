@@ -1,0 +1,6 @@
+{
+    "name": "John",
+    "salary": 150000,
+    "married": true,
+    "hobbies": ["sport", "music", "java"]
+}
