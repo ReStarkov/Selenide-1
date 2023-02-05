@@ -47,6 +47,11 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
+}
+
+
 task form_test(type: Test) {
     useJUnitPlatform {
         includeTags("form")
